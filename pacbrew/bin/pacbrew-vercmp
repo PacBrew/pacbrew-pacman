@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+PATH=/opt/pacbrew/pacman/bin:$PATH
+LD_LIBRARY_PATH=/opt/pacbrew/pacman/lib/x86_64-linux-gnu exec /opt/pacbrew/pacman/bin/vercmp "$@"

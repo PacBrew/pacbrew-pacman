@@ -30,7 +30,7 @@ Architecture = auto
 
 # Misc options
 #UseSyslog
-#Color
+Color
 #NoProgressBar
 CheckSpace
 #VerbosePkgLists
@@ -75,3 +75,7 @@ ParallelDownloads = 5
 #[custom]
 #SigLevel = Optional TrustAll
 #Server = file:///home/custompkgs
+
+[pacbrew]
+SigLevel = Optional TrustAll
+Server = http://pacbrew.mydedibox.fr/packages/
