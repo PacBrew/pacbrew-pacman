@@ -8,7 +8,7 @@ sudo apt install -y meson ninja-build gettext libarchive-dev libcurl4-openssl-de
 
 # pacbrew build
 rm -rf build
-meson --prefix=$PACBREW/pacman --sysconfdir=$PACBREW/pacman/etc --localstatedir=$PACBREW/pacman/var -Droot-dir=$PACBREW/pacman -Dmakepkg-template-dir=$PACBREW/usr/share/makepkg-template build/
+meson --prefix=$PACBREW/pacman --sysconfdir=$PACBREW/pacman/etc --localstatedir=$PACBREW/pacman/var -Dmakepkg-template-dir=$PACBREW/usr/share/makepkg-template build/
 ninja -C build/
 ninja -C build/ install
 
