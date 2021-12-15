@@ -4,7 +4,7 @@
 PACBREW=/opt/pacbrew
 
 # deps
-sudo apt install -y meson ninja-build gettext libarchive-dev libcurl4-openssl-dev libgpgme-dev
+sudo apt install -y meson ninja-build gettext libarchive-tools libarchive-dev libcurl4-openssl-dev libgpgme-dev
 
 # pacbrew build
 rm -rf build
