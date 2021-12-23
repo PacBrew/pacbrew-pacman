@@ -27,4 +27,4 @@ jobs:
 
       # Install pacbrew-pacman dependencies and build
       - name: Run build script
-        run: cd ./pacbrew.sh
+        run: ./pacbrew.sh
