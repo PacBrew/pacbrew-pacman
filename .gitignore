@@ -1,4 +1,9 @@
 *~
 *.o
 pacman-*.tar.gz
-build/
+build
+
+# deb build
+pacbrew/opt
+pacbrew/usr/share
+*.deb

@@ -5,14 +5,20 @@ PACBREW=/opt/pacbrew
 
 # deps
 sudo apt update
-sudo apt install -y build-essential automake autoconf libtool meson ninja-build python3-setuptools gettext texinfo libssl-dev libarchive-tools libarchive-dev libcurl4-openssl-dev libgpgme-dev
+sudo apt install -y build-essential automake autoconf libtool meson ninja-build \
+  gettext libarchive-dev libssl-dev libcurl4-openssl-dev libgpgme-dev
 
 # pacbrew build
-rm -rf build
-meson --prefix=$PACBREW/pacman --sysconfdir=$PACBREW/pacman/etc --localstatedir=$PACBREW/pacman/var -Dpkg-ext=.pkg.tar.xz -Dmakepkg-template-dir=$PACBREW/usr/share/makepkg-template build/
-ninja -C build/
-sudo ninja -C build/ install
+meson --prefix=$PACBREW/pacman --sysconfdir=$PACBREW/pacman/etc --localstatedir=$PACBREW/pacman/var \
+  -Dpkg-ext=.pkg.tar.xz -Dmakepkg-template-dir=$PACBREW/pacman/share/makepkg-template build
+ninja -C build
+DESTDIR=$PWD/pacbrew ninja -C build install
 
-# pacbrew links
-sudo cp pacbrew/bin/* /usr/bin/
+# pacbrew deb
+rm -rf pacbrew/usr/share
+dpkg-deb --build pacbrew
+mv pacbrew.deb pacbrew-pacman-1.0.deb
+
+# cleanup
+rm -rf build pacbrew/opt
 

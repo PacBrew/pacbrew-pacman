@@ -1,0 +1,6 @@
+Package: pacbrew-pacman
+Version: 1.0
+Maintainer: cpasjuste
+Architecture: all
+Section: devel
+Description: PacBrew Package Manager
