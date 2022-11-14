@@ -5,7 +5,7 @@ PACBREW=/opt/pacbrew
 
 # deps
 sudo apt update
-sudo apt install -y build-essential automake autoconf libtool meson ninja-build \
+sudo apt install -y build-essential pkg-config meson ninja-build \
   gettext libarchive-dev libssl-dev libcurl4-openssl-dev libgpgme-dev
 
 # pacbrew build
@@ -17,7 +17,7 @@ DESTDIR=$PWD/pacbrew ninja -C build install
 # pacbrew deb
 rm -rf pacbrew/usr/share
 dpkg-deb --build pacbrew
-mv pacbrew.deb pacbrew-pacman-1.0.deb
+mv pacbrew.deb pacbrew-pacman-1.1.deb
 
 # cleanup
 rm -rf build pacbrew/opt
