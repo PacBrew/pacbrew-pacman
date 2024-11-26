@@ -1,3 +1,5 @@
+Not needed anymore, ubuntu 24.04 now have pacman package manager available. See https://github.com/PacBrew/pacbrew-packages
+
 ALPM library overview & internals
 =================================
 
